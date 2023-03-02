@@ -1,0 +1,23 @@
+.header {
+  height: 70px;
+  background-color: #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #141617;
+  padding: 0px 50px;
+
+  &__wrapper {
+    max-width: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
