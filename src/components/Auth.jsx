@@ -45,7 +45,6 @@ const Auth = () => {
       // maybe trigger a loading screen
       return;
     }
-    console.log('user', user);
     if (user) {
       // navigate('/dashboard');
       dispatch(setLoaded(true));

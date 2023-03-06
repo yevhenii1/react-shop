@@ -56,8 +56,6 @@ const App = () => {
 
       const sort = lists.find((obj) => obj.sortProperty === params.sortProperty);
 
-      console.log('params', params);
-
       dispatch(
         setFilters({
           ...params,
