@@ -14,9 +14,9 @@ const Home = ({ onClickGetIdProduct }) => {
   return (
     <div className="home">
       <div className="home__container">
-        <div className="banner">
+        {/* <div className="banner">
           <img src="https://klike.net/uploads/posts/2020-11/1605348286_15.jpeg" alt="" />
-        </div>
+        </div> */}
         <div className="home__wrapper">
           <Categories />
           <Sort />
