@@ -16,14 +16,17 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-}
+  justify-content: space-between;
 
-.product {
-  max-width: 400px;
-  width: 100%;
-  margin-bottom: 20px;
-
-  .thumbnail {
+  &__product {
+    max-width: 380px;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75); 
+  }
+  &__thumbnail {
     max-width: 380px;
     width: 100%;
     height: 260px;
@@ -34,6 +37,7 @@
     }
   }
 }
+
 
 .categories {
   margin: 20px 0;

@@ -1,0 +1,33 @@
+.search {
+  margin-bottom: 50px;
+
+  &__container {
+    max-width: 400px;
+    width: 100%;
+    height: 25px;
+    position: relative;
+
+    input {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: rgb(212, 0, 0);
+    }
+  }
+}

@@ -1,18 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Sort from '../components/Sort';
+import Categories from '../components/Categiries';
+import Search from '../components/Search';
 import '../styles/home.scss';
 
-const Home = () => {
+const Home = ({ onClickGetIdProduct }) => {
   const products = useSelector((state) => state.products.products);
-  const categories = useSelector((state) => state.filter.categories);
-
-  const [categoriesSort, setCategoriesSort] = React.useState('all');
-
-  const onClickCategory = (item) => {
-    setCategoriesSort(item);
-  };
+  const serchValue = useSelector((state) => state.filter.serchValue);
 
   return (
     <div className="home">
@@ -21,36 +18,33 @@ const Home = () => {
           <img src="https://klike.net/uploads/posts/2020-11/1605348286_15.jpeg" alt="" />
         </div>
         <div className="home__wrapper">
-          <div className="categories">
-            <div className="categories__items">
-              {categories.map((item) => (
-                <div
-                  key={item}
-                  onClick={() => onClickCategory(item)}
-                  className={`categories__item ${item === categoriesSort ? 'active' : ''}`}>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
+          <Categories />
           <Sort />
         </div>
+
+        <Search />
 
         <div className="products">
           {products
             .filter((obj) => {
-              return categoriesSort === 'all' ? obj : obj.category === categoriesSort;
+              if (obj.title.toLowerCase().includes(serchValue.toLowerCase())) {
+                return true;
+              }
+              return false;
             })
             .map((obj) => (
-              <div key={obj.id} className="product">
-                <div className="thumbnail">
+              <Link
+                to="/product"
+                className="products__product"
+                key={obj.id}
+                onClick={() => onClickGetIdProduct(obj.id)}>
+                <div className="products__thumbnail">
                   <img src={obj.thumbnail} alt="img" />
                 </div>
-                <div className="title">{obj.title}</div>
-                <div className="brand">{obj.brand}</div>
-                <div className="price">{obj.price}</div>
-              </div>
+                <div className="products__title">{obj.title}</div>
+                <div className="products__brand">{obj.brand}</div>
+                <div className="products__price">{obj.price} $</div>
+              </Link>
             ))}
         </div>
       </div>

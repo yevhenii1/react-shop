@@ -49,3 +49,23 @@ a {
     color: rgb(0, 160, 120);
   }
 }
+
+button {
+  cursor: pointer;
+}
+
+.sign-in {
+  cursor: pointer;
+  border: 1px solid #555555;
+  padding: 3px 6px;
+  border-radius: 10px;
+  max-width: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: #555555;
+    color: #fff;
+  }
+}
